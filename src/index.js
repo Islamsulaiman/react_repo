@@ -21,7 +21,9 @@ function BookList() {
                 image = {firstBook.img}
                 prices = {firstBook.price}
                 authors = {firstBook.author} 
-            />
+            >
+                <p>This is a children for this specific component.</p>
+            </Book>
             <Book 
                 image = {secondBook.img}
                 prices = {secondBook.price}
@@ -31,11 +33,13 @@ function BookList() {
     );
 }
 
-const Book = ({image, prices, authors}) => {
+const Book = (props) => {
+    let {image, prices, authors, children} = props;
     return (<article className="book">
         <img src={image} alt="Books" />
         <h4>{prices}</h4>
         <h4>{authors}</h4>
+        <h4>{children}</h4>
     </article>);
 }
 
