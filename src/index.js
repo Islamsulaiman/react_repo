@@ -23,13 +23,13 @@ function BookList() {
     return (
         <section className="list">
             {bookArray.map((item) => {
-                return <Book id={bookArray.id} book = {item}/>
+                return <Book id={bookArray.id} {...item}/>
             })}
         </section>
     );
 }
 const Book = (props) => {
-    let {img, price, author} = props.book;
+    let {img, price, author} = props;
     return (<article className = "book">
         <img src={img} alt="Books" />
         <h4>{price}</h4>
