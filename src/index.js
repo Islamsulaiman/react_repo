@@ -38,7 +38,7 @@ const Book = (props) => {
     let {img, price, author} = props;
     let logAuthor = ()=> console.log(author);
     return (<article className = "book">
-        <img src={img} alt="Books" />
+        <img src={img} alt="Books"  onMouseOver ={() => console.log("Hover")} />
         <h4>{price}</h4>
         <h4>{author}</h4>
         <button type="button" onClick={logAuthor}>Press me</button>
