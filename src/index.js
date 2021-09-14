@@ -13,7 +13,6 @@ let secondBook = {
     price: "$ 10.15",
     author: "Robert kawasaki"
 }
-
 function BookList() {
     return (
         <section className="list">
@@ -22,9 +21,8 @@ function BookList() {
                 prices = {firstBook.price}
                 authors = {firstBook.author} 
             >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aliquid dignissimos deleniti nemo eveniet expedita dolorem, illum quasi veniam architecto consequuntur sint pariatur labore molestias explicabo tempora non molestiae ipsa.</p>
+                <p>This is a children for this specific component.</p>
             </Book>
-
             <Book 
                 image = {secondBook.img}
                 prices = {secondBook.price}
@@ -33,14 +31,13 @@ function BookList() {
         </section>
     );
 }
-
 const Book = (props) => {
     let {image, prices, authors, children} = props;
     return (<article className="book">
         <img src={image} alt="Books" />
         <h4>{prices}</h4>
         <h4>{authors}</h4>
-        <h1>{children}</h1>
+        <h4>{children}</h4>
     </article>);
 }
 
