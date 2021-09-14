@@ -3,7 +3,10 @@ import ReactDom from "react-dom"
 import "./index.css";
 
 //import the array of objects
-import {bookArray} from './books'
+import {bookArray} from './books'   //bookArray should match the same name of the array name
+
+// import the sub-component from its file 
+import Book from './subComponents' 
 
 function BookList() {
     return (
@@ -14,20 +17,6 @@ function BookList() {
         </section>
     );
 }
-const Book = (props) => {
-    let {img, price, author} = props;
 
-    let complexFunc = (price) => console.log(price);
-
-    let logAuthor = ()=> console.log(author);
-
-    return (<article className = "book">
-        <img src={img} alt="Books"  onMouseOver ={() => console.log("Hover")} />
-        <h4>{price}</h4>
-        <h4>{author}</h4>
-        <button type="button" onClick={logAuthor}>Press me</button>
-        <button type="button" onClick={() => complexFunc(price)}>complex</button>
-    </article>);
-}
 
 ReactDom.render(<BookList />, document.getElementById("root"));
